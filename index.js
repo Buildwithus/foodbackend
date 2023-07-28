@@ -127,6 +127,9 @@ const login=async(req,res)=>{
     });
  
     res.cookie("jwtoken",token,{
+        sameSite : "none",
+         secure: true,
+        httpOnly: true,
         expires:new Date(Date.now() + 1000 * 12000)
     })
  
